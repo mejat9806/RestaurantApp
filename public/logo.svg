@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #000;
+        stroke-linejoin: round;
+        stroke-width: 7px;
+      }
+
+      .cls-1, .cls-2 {
+        font-size: 50px;
+        font-family: "Roboto Slab";
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <text id="MY" class="cls-1" transform="translate(681.001 419.298) scale(6.84)">MY</text>
+  <text id="Borgur" class="cls-2" transform="translate(495.011 688.326) scale(5.702)">Borgur</text>
+</svg>

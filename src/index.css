@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .boxNav {
+    @apply relative tracking-[1px] hover:text-yellow-300 px-5 font-extrabold text-2xl;
+  }
+  .boxNav::before {
+    @apply content-[""] bg-black h-9 w-[0%] left-0 -bottom-[5px]  absolute duration-500 -z-20 text-yellow-300;
+  }
+  .boxNav:hover::before {
+    @apply w-full; /* Use w-full directly, no need for @apply here */
+  }
+  .boxNavSmall {
+    @apply relative tracking-[1px] hover:text-yellow-300 px-5 font-extrabold text-2xl;
+  }
+  .boxNavSmall::before {
+    @apply content-[""] bg-black h-12 w-[0%] left-0 -bottom-[5px]  absolute duration-500 -z-20 text-yellow-300;
+  }
+  .boxNavSmall:hover::before {
+    @apply w-full; /* Use w-full directly, no need for @apply here */
+  }
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+/* DrinkLogo.css */
+
+.fade-in {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 1s ease-in-out; /* You can adjust the transition duration and easing function */
+}
+@keyframes panDown {
+  0%,
+  100% {
+    background-position: center top;
+  }
+  50% {
+    background-position: center bottom;
+  }
+}
+
+html,
+body {
+  min-height: 100svh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* or h-screen for Tailwind */
+}
