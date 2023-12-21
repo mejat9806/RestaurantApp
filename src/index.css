@@ -21,11 +21,21 @@
   .boxNavSmall:hover::before {
     @apply w-full; /* Use w-full directly, no need for @apply here */
   }
+  .menuItemTittle {
+    @apply font-menuTitle  font-extrabold mb-5 sm:text-3xl text-lg;
+  }
+  .menuItem {
+    @apply flex flex-col items-center  sm:w-[100%];
+  }
+  .menuItemWord {
+    @apply sm:font-normal mb-10 sm:w-[20rem] sm:text-lg text-sm  w-[300px] text-center;
+  }
 }
 
 body {
   height: 100vh;
   margin: 0;
+  box-sizing: border-box;
 }
 
 /* DrinkLogo.css */

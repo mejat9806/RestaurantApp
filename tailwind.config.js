@@ -5,6 +5,8 @@ export default {
     fontFamily: {
       roboto: "Roboto Mono ,monospace", // sans is default tailwind and be replaced it
       //this will overwrite everything
+      menu: "Rubik Doodle Shadow",
+      menuTitle: "Fjalla One",
     },
     extend: {},
 

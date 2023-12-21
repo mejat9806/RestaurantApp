@@ -4,9 +4,10 @@ import ShowMenu from "./ShowMenu";
 
 function MenuLayout() {
   return (
-    <div className="flex justify-center flex-col items-center mt-5 space-y-6">
+    <div className="flex flex-col items-center  ">
       <MenuHeader />
       <Menu />
+
       <ShowMenu />
     </div>
   );

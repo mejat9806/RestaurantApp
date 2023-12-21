@@ -13,6 +13,7 @@ import { ItemProvider } from "../src/context/contextItem";
 import BurgerMenu from "./pages/BurgerMenu";
 import MenuLayout from "./UI/MenuLayout";
 import PizzaMenu from "./pages/PizzaMenu";
+import BBQMenu from "./pages/BBQMenu";
 
 function App() {
   const queryClient = new QueryClient({
@@ -35,6 +36,7 @@ function App() {
                 <Route index element={<BurgerMenu />} />
                 <Route path="burger" element={<BurgerMenu />} />
                 <Route path="pizza" element={<PizzaMenu />} />
+                <Route path="barbeque" element={<BBQMenu />} />
               </Route>
 
               <Route path="booking" element={<Booking />} />

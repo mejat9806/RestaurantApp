@@ -3,6 +3,7 @@ function Button({ children, onclick, design, to }) {
     normal: "",
     button:
       " border-black border-2 p-2 rounded-lg font-semibold  hover:bg-black hover:text-yellow-300   transition-all duration-500 	w-[40%] sm:w-[110px] mt-4 wrap",
+    buttonClose: "z-50 ",
   };
   if (to) {
     <button className={`${styles[design]}`}>{children}</button>;

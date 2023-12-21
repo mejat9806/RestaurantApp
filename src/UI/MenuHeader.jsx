@@ -1,6 +1,6 @@
 function MenuHeader() {
   return (
-    <div className="w-[600px] text-center ">
+    <div className="sm:w-[600px] text-center mt-20 mb-10 hidden sm:block">
       <h1 className="font-roboto text-6xl font-extrabold ">MENUS</h1>
       <p className="mt-3 font-medium">
         Embark on a BBQ journey spanning our nation and the globe, tracing back
