@@ -1,11 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import PizzaMenuItem from "../UI/PizzaMenuItem";
+import PizzaMenuItem from "../features/PizzaMenuItem";
 import useScroll from "../hooks/useScroll";
 
 function PizzaMenu() {
-  useScroll("menu/pizza");
+  useScroll("gotoMenu");
   return (
-    <div className="flex flex-col justify-center text-center items-center mt-4  w-full">
+    <div className="flex flex-col justify-center text-center items-center mt-4  w-full ">
       {" "}
       <div className="mb-5 flex flex-col items-center ">
         <h1 className="text-6xl font-extrabold mb-5 font-menu" id="menu/pizza">
@@ -19,7 +19,7 @@ function PizzaMenu() {
           experience to unprecedented heights.
         </p>
       </div>
-      <div className="grid grid-cols-1 w-[100%]">
+      <div className=" flex mb-40">
         <PizzaMenuItem />
       </div>
     </div>

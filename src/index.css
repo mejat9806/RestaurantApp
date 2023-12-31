@@ -22,13 +22,14 @@
     @apply w-full; /* Use w-full directly, no need for @apply here */
   }
   .menuItemTittle {
-    @apply font-menuTitle  font-extrabold mb-5 sm:text-3xl text-lg;
+    @apply font-menuTitle capitalize font-extrabold  sm:text-3xl text-3xl;
   }
   .menuItem {
-    @apply flex flex-col items-center  sm:w-[100%];
+    @apply flex flex-col items-center  sm:w-[100%] md:w-full w-[100%] justify-center;
   }
+
   .menuItemWord {
-    @apply sm:font-normal mb-10 sm:w-[20rem] sm:text-lg text-sm  w-[300px] text-center;
+    @apply sm:font-normal  sm:w-[20rem] sm:text-lg text-sm  w-[300px] text-center mt-5 px-3;
   }
 }
 
@@ -67,4 +68,18 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* or h-screen for Tailwind */
+}
+
+.blur-load.loaded > img {
+  opacity: 1;
+  width: 300px;
+  height: 300px;
+  aspect-ratio: 1/1;
+}
+
+.blur-load > img {
+  opacity: 0;
+  height: 0;
+  width: 0;
+  transition: opacity 300ms ease-in-out;
 }

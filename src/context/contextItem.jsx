@@ -10,23 +10,178 @@ function ItemProvider({ children }) {
       desc: "fresh burger with Homemade Sauce",
       button: "Burger Menu",
       reversed: false,
-      image: "/public/burger1.jpg",
-      video: "/public/production_id-4131833 (1080p).mp4",
+      image: "/burger1.jpg",
+      video: "/production_id-4131833 (1080p).mp4",
     },
     {
       id: 2,
-      item: "Pizza",
-      desc: "fresh baked Pizza in woodBurning Oven ",
-      button: "Pizaa Menu",
+      item: "BBQ",
+      desc: "Embrace BBQ's Smoky Serenade.",
+      button: "BBQ Menu",
       reversed: true,
-      image: "/public/pizza image.jpg",
-      video: "/public/pizza oven.mp4",
+      image: "/meat/BBQ.jpg",
+      video: "/pizza oven.mp4",
     },
   ];
+  const BBQdata = {
+    beef: {
+      id: 1,
+      title: "Beef",
+      desc: "Smoked daily,all served with bread and vegetable.all sold by 100g",
+      items: [
+        {
+          name: "Smoked brisket",
+          weight: 100,
+          price: 50,
+        },
+        {
+          name: "rib",
+          weight: 100,
+          price: 40,
+        },
+        {
+          name: "burned bits",
+          weight: 100,
+          price: 20,
+        },
+        {
+          name: "burned ends",
+          weight: 100,
+          price: 30,
+        },
+        {
+          name: "Chopped beef",
+          weight: 100,
+          price: 20,
+        },
+        {
+          name: "beef sausages",
+          weight: 100,
+          price: 20,
+        },
+      ],
+    },
+
+    chicken: {
+      id: 2,
+      title: "Chicken",
+      desc: "Deliciously grilled and served with care ",
+      items: [
+        {
+          name: "BBQ Chicken wings ",
+          piece: 6,
+          price: 20,
+        },
+        {
+          name: "Grilled BBQ Chicken Breast",
+          price: 10,
+        },
+        {
+          name: "BBQ Chicken Skewers",
+          piece: 1,
+          price: 5,
+        },
+        {
+          name: "BBQ Chicken Tacos",
+          piece: 2,
+          price: 7,
+        },
+        {
+          name: "BBQ Chicken Tenders ",
+          piece: 5,
+          price: 20,
+        },
+        {
+          name: "BBQ Chicken Sliders",
+          piece: "6",
+          price: 20,
+        },
+        {
+          name: "BBQ Chicken Caesar Salad",
+          price: 14,
+        },
+      ],
+    },
+
+    fish: {
+      id: 3,
+      title: "fish",
+      desc: "Succulent BBQ Grilled Fish Deligh",
+      items: [
+        {
+          name: "Grilled BBQ Fish Tacos",
+          piece: 3,
+          price: 20,
+        },
+        {
+          name: "BBQ Fish Skewers",
+          piece: 3,
+          price: 15,
+        },
+        {
+          name: "BBQ Glazed Salmon",
+          price: 25,
+        },
+        {
+          name: "Grilled BBQ Fish Tacos",
+          price: 20,
+        },
+      ],
+    },
+  };
+  const SpecialItems = {
+    Sandwich: {
+      id: 1,
+      item: [
+        {
+          title: "pull beef sandwich",
+          description:
+            "Sandwich full of our delicous shredded beef with special spicy BBQ sauce,cheese and  pickle",
+          imagesrc: "/meat/Slow-Cooker-Shredded-Beef-SQ.webp",
+          price: 15,
+        },
+        {
+          title: "Grilled cheese ",
+          description: "Just a grill cheese",
+          imagesrc: "/meat/grilled-cheese-sandwich.jpg",
+          price: 7,
+        },
+        {
+          title: "japanese style chicken katsu sandwichs",
+          description:
+            "Enjoy the worldwide hit: Classic Chicken Katsu Sandwich, a perfect fusion of crispy chicken, Japanese Milk Bread, veggies, and tangy BBQ sauce.",
+          imagesrc: "/public/meat/katsu_sandwitch.jpg",
+          price: 7,
+        },
+      ],
+    },
+
+    Beef: {
+      id: 2,
+      item: [
+        {
+          title: "Meat lover  ",
+          description:
+            "Plate of all of our BBQ meat products ,suitable for sharing with family and friends",
+          imagesrc: "/meat/plate_of_meat.jpg",
+          price: 199,
+        },
+        {
+          title: "Smoke Short Rib",
+          description:
+            "delicous smoke for hours short rib with BBQ sauce glace  ",
+          imagesrc: "/public/meat/BBQ_Beef_Short_Ribs_600x.jpg",
+          price: 199,
+        },
+      ],
+    },
+  };
   return (
     <itemsContext.Provider
       value={{
         PromoData,
+        BBQdata,
+        SpecialItems,
       }}
     >
       {children}

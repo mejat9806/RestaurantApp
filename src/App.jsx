@@ -1,20 +1,26 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Booking from "./pages/Booking";
-
-import PageNotFound from "./pages/PageNotFound";
 import { Toaster } from "react-hot-toast";
-import Applayout from "./UI/Applayout";
-import Gallery from "./pages/Gallery";
 import { ItemProvider } from "../src/context/contextItem";
-import BurgerMenu from "./pages/BurgerMenu";
-import MenuLayout from "./UI/MenuLayout";
-import PizzaMenu from "./pages/PizzaMenu";
-import BBQMenu from "./pages/BBQMenu";
+import { Suspense, lazy } from "react";
 
+import Applayout from "./features/Applayout.jsx";
+import Spinner from "./features/Spinner.jsx";
+
+const SpecialMenu = lazy(() => import("./pages/SpecialMenu.jsx"));
+const DrinkMenu = lazy(() => import("./pages/DrinkMenu.jsx"));
+const Side = lazy(() => import("./pages/Side.jsx"));
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const MenuLayout = lazy(() => import("./features/MenuLayout"));
+const BurgerMenu = lazy(() => import("./pages/BurgerMenu"));
+const PizzaMenu = lazy(() => import("./pages/PizzaMenu"));
+const BBQMenu = lazy(() => import("./pages/BBQMenu"));
+const Booking = lazy(() => import("./pages/Booking"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 function App() {
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -23,29 +29,32 @@ function App() {
       },
     },
   });
+
   return (
     <ItemProvider>
       <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false} />
         <BrowserRouter>
-          <Routes>
-            <Route element={<Applayout />}>
-              <Route index element={<Home />} />
-              <Route path="about" element={<About />} />
-              <Route path="menu" element={<MenuLayout />}>
-                <Route index element={<BurgerMenu />} />
-                <Route path="burger" element={<BurgerMenu />} />
-                <Route path="pizza" element={<PizzaMenu />} />
-                <Route path="barbeque" element={<BBQMenu />} />
+          <Suspense fallback={<Spinner />}>
+            <Routes>
+              <Route element={<Applayout />}>
+                <Route index element={<Home />} />
+                <Route path="about" element={<About />} />
+                <Route path="menu/" element={<MenuLayout />}>
+                  <Route path="burger" element={<BurgerMenu />} />
+                  <Route path="pizza" element={<PizzaMenu />} />
+                  <Route path="barbeque" element={<BBQMenu />} />
+                  <Route path="drink" element={<DrinkMenu />} />
+                  <Route path="special" element={<SpecialMenu />} />
+                  <Route path="side" element={<Side />} />
+                </Route>
+                <Route path="booking" element={<Booking />} />
+                <Route path="Contact" element={<Contact />} />
+                <Route path="gallery" element={<Gallery />} />
+                <Route path="*" element={<PageNotFound />} />
               </Route>
-
-              <Route path="booking" element={<Booking />} />
-              <Route path="Contact" element={<Booking />} />
-
-              <Route path="gallery" element={<Gallery />} />
-              <Route path="*" element={<PageNotFound />} />
-            </Route>
-          </Routes>
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </QueryClientProvider>
       <Toaster
@@ -66,7 +75,7 @@ function App() {
             backgroundColor: "var(--color-grey-0)",
             color: "var(--color-grey-700)",
             opacity: "100",
-            border: "1px solid var(--color-grey-200",
+            border: "1px solid var(--color-grey-200)",
           },
         }}
       />

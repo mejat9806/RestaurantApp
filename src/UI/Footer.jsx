@@ -5,10 +5,9 @@ import { useNavigate } from "react-router-dom";
 function Footer() {
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
-  console.log(window.scrollY);
-  useEffect(() => {
+/*   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 2500) {
+      if (window.scrollY > 2500||window.scrollY > innerHeight*0.5 ) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -19,7 +18,25 @@ function Footer() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+ */
+  useEffect(() => {
+    const handleScroll = () => {
+      const isAtBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight;
+  /* console.log("scrollY:",window.scrollY,"window.innerHeight:",window.innerHeight,"document height:",document.documentElement.scrollHeight) */
+      if (isAtBottom) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+  
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  
   return (
     <div
       className={`w-full h-14 bg-black bottom-0 z-50 flex items-center justify-between  fixed ${
