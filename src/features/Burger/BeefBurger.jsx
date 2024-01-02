@@ -1,5 +1,5 @@
 import { easeInOut, motion } from "framer-motion";
-import MenuItem from "./MenuItem";
+import MenuItem from "../MenuItem";
 function BeefBurger() {
   const variants = {
     hidden: { opacity: 0, y: 50 },

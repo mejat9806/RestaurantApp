@@ -1,13 +1,15 @@
 /* eslint-disable no-unused-vars */
-import { useItems } from "../context/contextItem";
-import MenuItem from "./MenuItem";
+import { useItems } from "../../context/contextItem";
+import MenuItem from "../MenuItem";
 import { easeInOut, motion } from "framer-motion";
 function SpecialMenuItem() {
+  const { SpecialItems } = useItems();
   const {
-    SpecialItems: { Beef, Sandwich },
-  } = useItems();
-  const { item: BeefSpecialMenu } = Beef;
-  const { item: SandwischSpecialMenu } = Sandwich;
+    Sandwich: { item: SandWichSpecialItem },
+  } = SpecialItems[0];
+  const {
+    Beef: { item: BeefSpecialItem },
+  } = SpecialItems[1];
   const variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
@@ -26,7 +28,7 @@ function SpecialMenuItem() {
             Meat Special
           </h1>
           <div className="space-y-8 ">
-            {BeefSpecialMenu.map((beef, i) => (
+            {BeefSpecialItem.map((beef, i) => (
               <motion.div whileHover={{ scale: 1.05 }} key={beef.title}>
                 <MenuItem
                   title={beef.title}
@@ -44,7 +46,7 @@ function SpecialMenuItem() {
             Sandwich
           </h1>
           <div className="space-y-8">
-            {SandwischSpecialMenu.map((sandwich) => (
+            {SandWichSpecialItem.map((sandwich) => (
               <motion.div key={sandwich.title} whileHover={{ scale: 1.05 }}>
                 <MenuItem
                   title={sandwich.title}

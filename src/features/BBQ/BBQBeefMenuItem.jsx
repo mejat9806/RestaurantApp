@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-import { formatCurrency } from "../utils/helper";
+import { formatCurrency } from "../../utils/helper";
 
 function BBQBeefMenuItem({ item }) {
   const { name, price, weight } = item;

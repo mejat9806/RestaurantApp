@@ -1,9 +1,12 @@
 import { useScroll } from "framer-motion";
+import Button from "../UI/Button";
+import { useNavigate } from "react-router-dom";
 
 function DrinkMenu() {
+  const navigate = useNavigate();
   useScroll("gotoMenu");
   return (
-    <div className=" m-auto   group drop-shadow-2xl sm:max-w-[100%] sm:w-[100%] sm:h-[480px] w-full ">
+    <div className=" m-auto   group drop-shadow-2xl sm:max-w-[100%] sm:w-[100%] sm:h-[480px] w-full mb-8 ">
       <div className="w-full  rounded-2xl bg-center bg-auto duration-500 ">
         <h1 className="text-black font-extrabold p-4 text-5xl text-center">
           Drink
@@ -14,7 +17,11 @@ function DrinkMenu() {
           extinguish your thirst for something new to drink
         </p>
       </div>
-      <div className="flex justify-center pt-4"></div>
+      <div className="flex justify-center pt-4 ">
+        <Button design="buttonSpecial" onclick={() => navigate("/menu/drink")}>
+          Drink Menu
+        </Button>
+      </div>
     </div>
   );
 }

@@ -31,8 +31,8 @@ function App() {
   });
 
   return (
-    <ItemProvider>
-      <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient} contextSharing={true}>
+      <ItemProvider>
         <ReactQueryDevtools initialIsOpen={false} />
         <BrowserRouter>
           <Suspense fallback={<Spinner />}>
@@ -56,30 +56,30 @@ function App() {
             </Routes>
           </Suspense>
         </BrowserRouter>
-      </QueryClientProvider>
-      <Toaster
-        position="top-center"
-        gutter={12}
-        containerStyle={{ margin: "8px" }}
-        toastOptions={{
-          success: {
-            duration: 3000,
-          },
-          error: {
-            duration: 5000,
-          },
-          style: {
-            fontSize: "16px",
-            maxWidth: "500px",
-            padding: "16px 24px",
-            backgroundColor: "var(--color-grey-0)",
-            color: "var(--color-grey-700)",
-            opacity: "100",
-            border: "1px solid var(--color-grey-200)",
-          },
-        }}
-      />
-    </ItemProvider>
+        <Toaster
+          position="top-center"
+          gutter={12}
+          containerStyle={{ margin: "8px" }}
+          toastOptions={{
+            success: {
+              duration: 3000,
+            },
+            error: {
+              duration: 5000,
+            },
+            style: {
+              fontSize: "16px",
+              maxWidth: "500px",
+              padding: "16px 24px",
+              backgroundColor: "var(--color-grey-0)",
+              color: "var(--color-grey-700)",
+              opacity: "100",
+              border: "1px solid var(--color-grey-200)",
+            },
+          }}
+        />
+      </ItemProvider>
+    </QueryClientProvider>
   );
 }
 

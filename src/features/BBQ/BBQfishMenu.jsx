@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
-import { useItems } from "../context/contextItem";
+import { useItems } from "../../context/contextItem";
 import { easeInOut, motion } from "framer-motion";
 
 import BBQfishMenuItem from "./BBQfishMenuItem";
 
 function BBQfishMenu() {
   const { BBQdata } = useItems();
-  const { items, title, desc } = BBQdata.fish;
+  const {
+    fish: { desc, title, items },
+  } = BBQdata[2];
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}

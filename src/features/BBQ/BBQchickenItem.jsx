@@ -1,4 +1,4 @@
-import { formatCurrency } from "../utils/helper";
+import { formatCurrency } from "../../utils/helper";
 
 function BBQchickenItem({ item }) {
   const { name, price, piece } = item;

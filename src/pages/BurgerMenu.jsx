@@ -1,5 +1,5 @@
-import BeefBurger from "../features/BeefBurger";
-import ChickenBurger from "../features/ChickenBurger";
+import BeefBurger from "../features/Burger/BeefBurger";
+import ChickenBurger from "../features/Burger/ChickenBurger";
 import useScroll from "../hooks/useScroll";
 
 function BurgerMenu() {

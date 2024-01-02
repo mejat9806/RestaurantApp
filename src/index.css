@@ -39,26 +39,6 @@ body {
   box-sizing: border-box;
 }
 
-/* DrinkLogo.css */
-
-.fade-in {
-  opacity: 0;
-}
-
-.show {
-  opacity: 1;
-  transition: opacity 1s ease-in-out; /* You can adjust the transition duration and easing function */
-}
-@keyframes panDown {
-  0%,
-  100% {
-    background-position: center top;
-  }
-  50% {
-    background-position: center bottom;
-  }
-}
-
 html,
 body {
   min-height: 100svh;

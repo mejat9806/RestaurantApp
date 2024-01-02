@@ -1,8 +1,14 @@
-import SpecialMenuItem from "../features/SpecialMenuItem";
+import useScroll from "../hooks/useScroll";
+import SpecialMenuItem from "../features/Special/SpecialMenuItem";
 
 function SpecialMenu() {
+  useScroll("gotoMenu");
+
   return (
-    <div className="flex flex-col justify-center text-center items-center mt-4  w-full ">
+    <div
+      className="flex flex-col justify-center text-center items-center mt-4  w-full "
+      id="test"
+    >
       {" "}
       <div className="mb-5 flex flex-col items-center ">
         <h1 className="text-6xl font-extrabold mb-5 font-menu" id="menu/pizza">

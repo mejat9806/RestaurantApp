@@ -1,6 +1,6 @@
-import BBQBeefMenu from "../features/BBQBeefMenu";
-import BBQChickenMenu from "../features/BBQChickenMenu";
-import BBQfishMenu from "../features/BBQfishMenu";
+import BBQBeefMenu from "../features/BBQ/BBQBeefMenu";
+import BBQChickenMenu from "../features/BBQ/BBQChickenMenu";
+import BBQfishMenu from "../features/BBQ/BBQfishMenu";
 import { easeInOut, motion } from "framer-motion";
 import useScroll from "../hooks/useScroll";
 

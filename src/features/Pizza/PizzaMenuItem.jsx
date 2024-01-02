@@ -1,4 +1,4 @@
-import MenuItem from "./MenuItem";
+import MenuItem from "../MenuItem";
 import { easeInOut, motion } from "framer-motion";
 function PizzaMenuItem() {
   const variants = {

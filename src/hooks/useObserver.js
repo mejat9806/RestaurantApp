@@ -22,7 +22,6 @@ function useObserver(rootMargin = "0px") {
       observer.observe(element);
       observers.current.set(element, observer);
     }
-    console.log(visibilityStates);
   };
 
   const disconnectObserver = (element) => {
@@ -38,7 +37,7 @@ function useObserver(rootMargin = "0px") {
       observers.current.forEach((observer) => {
         observer.disconnect();
       });
-      observers.current.clear();
+      return () => observers.current.clear();
     };
   }, []);
 
