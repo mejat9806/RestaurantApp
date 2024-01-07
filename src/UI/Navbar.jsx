@@ -7,7 +7,7 @@ import Nav from "./Nav";
 function Navbar() {
   return (
     <div>
-      <nav className="flex justify-between items-center shadow-2xl">
+      <nav className="flex justify-between items-center shadow-xl">
         <Logo />
         <Nav />
       </nav>

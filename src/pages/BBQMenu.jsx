@@ -3,13 +3,24 @@ import BBQChickenMenu from "../features/BBQ/BBQChickenMenu";
 import BBQfishMenu from "../features/BBQ/BBQfishMenu";
 import { easeInOut, motion } from "framer-motion";
 import useScroll from "../hooks/useScroll";
+import NoItemFound from "../UI/NoItemFound";
+import Spinner from "../features/Spinner";
+import { useData } from "../features/Data/useData";
 
 function BBQMenu() {
+  useScroll("gotoMenu");
+  const { productData, isLoading, error } = useData();
+  if (isLoading) return <Spinner />;
+  const BeefBBQ = productData.filter((item) => item.category === "bbq_beef");
+  const ChickenBBQ = productData.filter(
+    (item) => item.category === "bbq_chicken",
+  );
+  const FishBBQ = productData.filter((item) => item.category === "bbq_fish");
+  if (error) return <NoItemFound />;
   const variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
-  useScroll("gotoMenu");
   return (
     <div
       className="flex flex-col justify-center text-center items-center mt-4  w-full h-full mb-20 "
@@ -35,7 +46,7 @@ function BBQMenu() {
           transition={{ duration: 1, easings: easeInOut }}
           className="flex lg:justify-end justify-center mb-7"
         >
-          <BBQBeefMenu />
+          <BBQBeefMenu BeefBBQ={BeefBBQ} />
         </motion.div>
         <motion.div
           initial="hidden"
@@ -44,7 +55,7 @@ function BBQMenu() {
           transition={{ duration: 1, easings: easeInOut, delay: 0.2 }}
           className="flex lg:justify-start justify-center mb-7"
         >
-          <BBQChickenMenu />
+          <BBQChickenMenu ChickenBBQ={ChickenBBQ} />
         </motion.div>
         <motion.div
           initial="hidden"
@@ -53,7 +64,7 @@ function BBQMenu() {
           transition={{ duration: 1, easings: easeInOut, delay: 0.4 }}
           className="lg:col-span-2 lg:mx-auto flex justify-center mb-7"
         >
-          <BBQfishMenu />
+          <BBQfishMenu FishBBQ={FishBBQ} />
         </motion.div>
       </div>
     </div>

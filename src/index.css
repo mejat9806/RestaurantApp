@@ -24,12 +24,21 @@
   .menuItemTittle {
     @apply font-menuTitle capitalize font-extrabold  sm:text-3xl text-3xl;
   }
+  .contactSubText {
+    @apply font-menuTitle capitalize font-extrabold  sm:text-3xl text-2xl;
+  }
   .menuItem {
     @apply flex flex-col items-center  sm:w-[100%] md:w-full w-[100%] justify-center;
   }
 
   .menuItemWord {
     @apply sm:font-normal  sm:w-[20rem] sm:text-lg text-sm  w-[300px] text-center mt-5 px-3;
+  }
+  .contactLabel {
+    @apply font-normal font-menuTitle text-base md:text-lg text-right flex items-center  justify-center lg:text-start;
+  }
+  .inputBox {
+    @apply h-[50px] rounded-sm focus:outline-none focus:ring border-black border-2 focus:ring-yellow-500  focus:border-none focus:scale-[1.01] transition-all ease-in-out drop-shadow-xl;
   }
 }
 

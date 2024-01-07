@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function NavLinks({ isOpen, setIsOpen }) {
   return (
     <div
-      className={`mt-10 flex items-center justify-between  sm:flex-col  md:flex-row md:justify-between gap-28 md:gap-0 ${
+      className={`mt-10 flex items-center justify-between  sm:flex-col space-x-7 md:flex-row md:justify-between gap-28 md:gap-0 ${
         isOpen ? "flex-col" : "flex-row"
       }`}
     >
@@ -22,6 +22,19 @@ function NavLinks({ isOpen, setIsOpen }) {
       >
         Menu
       </NavLink>
+      {/*   <NavLink
+        className={({ isActive }) =>
+          `   ${
+            isActive
+              ? "sm:text-yellow-300 font-extrabold sm:bg-black sm:boxNav bg-black text-yellow-200 "
+              : ""
+          } sm:boxNav boxNavSmall`
+        }
+        to="/about"
+        onClick={() => setIsOpen(false)}
+      >
+        About
+      </NavLink> */}
       <NavLink
         className={({ isActive }) =>
           `   ${
@@ -34,19 +47,6 @@ function NavLinks({ isOpen, setIsOpen }) {
         onClick={() => setIsOpen(false)}
       >
         Contact
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          `   ${
-            isActive
-              ? "sm:text-yellow-300 font-extrabold sm:bg-black sm:boxNav bg-black text-yellow-200 "
-              : ""
-          } sm:boxNav boxNavSmall`
-        }
-        to="/about"
-        onClick={() => setIsOpen(false)}
-      >
-        About
       </NavLink>
       <NavLink
         className={({ isActive }) =>

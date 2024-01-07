@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Spinner from "./Spinner";
 import { formatCurrency } from "../utils/helper";
 
-function MenuItem({ title, imagesrc, description, imageSmall, price }) {
+function MenuItem({ title, imagesrc, description, price }) {
   useEffect(() => {
     const blurDiv = document.querySelectorAll(".blur-load");
     blurDiv.forEach((div) => {
@@ -28,21 +28,12 @@ function MenuItem({ title, imagesrc, description, imageSmall, price }) {
         <h1 className="menuItemTittle text-yellow-300 my-2 z-10 ">{title}</h1>
       </div>
 
-      <div
-        className="blur-load "
-        style={{
-          backgroundImage: `url(${imageSmall})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          aspectRatio: "1/1",
-          boxSizing: "border-box",
-        }}
-      >
+      <div className="">
         <img
           src={imagesrc}
           alt={title}
           loading="lazy"
-          className={`aspect-square  object-cover object-center `}
+          className={`aspect-square  object-cover object-center w-[300px] h-[300px]`}
         />
       </div>
       <p className="menuItemWord w-full capitalize">{description}</p>

@@ -1,6 +1,9 @@
-import SideMenu from "./SideMenu";
+import SideMenu from "../features/Sides/SideMenu";
+import useScroll from "../hooks/useScroll";
 
 function Side() {
+  useScroll("gotoMenu");
+
   return (
     <div className="flex flex-col justify-center text-center items-center mt-4  w-full ">
       {" "}

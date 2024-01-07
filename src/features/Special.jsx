@@ -1,4 +1,4 @@
-import SpecialItem from "./SpecialItem";
+import SpecialItem from "./Special/SpecialItem";
 
 const specialStuff = [
   {

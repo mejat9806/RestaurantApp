@@ -42,7 +42,7 @@ function DrinkSlider() {
     return null;
   }
   return (
-    <div className=" m-auto pt-5 px-4  group drop-shadow-2xl    sm:h-[580px]  h-[500px]  sm:w-[26rem] w-[400px] mb-52 sm:mb-0">
+    <div className=" m-auto pt-5 px-4  group drop-shadow-2xl    sm:h-[580px]  h-[400px]  sm:w-[26rem] w-[300px] mb-52 sm:mb-0">
       <div
         className="w-full h-full rounded-2xl bg-center bg-auto duration-500  "
         style={{

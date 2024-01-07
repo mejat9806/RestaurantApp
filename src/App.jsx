@@ -7,19 +7,24 @@ import { Suspense, lazy } from "react";
 
 import Applayout from "./features/Applayout.jsx";
 import Spinner from "./features/Spinner.jsx";
+import BurgerMenu from "./pages/BurgerMenu.jsx";
+import BBQMenu from "./pages/BBQMenu.jsx";
+import SpecialMenu from "./pages/SpecialMenu.jsx";
+import PizzaMenu from "./pages/PizzaMenu.jsx";
+import DrinkMenu from "./pages/PizzaMenu.jsx";
+import Side from "./pages/Side.jsx";
 
-const SpecialMenu = lazy(() => import("./pages/SpecialMenu.jsx"));
-const DrinkMenu = lazy(() => import("./pages/DrinkMenu.jsx"));
-const Side = lazy(() => import("./pages/Side.jsx"));
 const Home = lazy(() => import("./pages/Home"));
-const About = lazy(() => import("./pages/About"));
 const MenuLayout = lazy(() => import("./features/MenuLayout"));
-const BurgerMenu = lazy(() => import("./pages/BurgerMenu"));
+/* const About = lazy(() => import("./pages/About"));
+/* const SpecialMenu = lazy(() => import("./pages/SpecialMenu.jsx"));
+const Side = lazy(() => import("./pages/Side.jsx"));
+const DrinkMenu = lazy(() => import("./pages/DrinkMenu.jsx")); */
+/* const BurgerMenu = lazy(() => import("./pages/BurgerMenu"));
 const PizzaMenu = lazy(() => import("./pages/PizzaMenu"));
-const BBQMenu = lazy(() => import("./pages/BBQMenu"));
+const BBQMenu = lazy(() => import("./pages/BBQMenu")); */
 const Booking = lazy(() => import("./pages/Booking"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Gallery = lazy(() => import("./pages/Gallery"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 function App() {
   const queryClient = new QueryClient({
@@ -39,7 +44,8 @@ function App() {
             <Routes>
               <Route element={<Applayout />}>
                 <Route index element={<Home />} />
-                <Route path="about" element={<About />} />
+                {/*                 <Route path="about" element={<About />} />
+                 */}{" "}
                 <Route path="menu/" element={<MenuLayout />}>
                   <Route path="burger" element={<BurgerMenu />} />
                   <Route path="pizza" element={<PizzaMenu />} />
@@ -50,7 +56,6 @@ function App() {
                 </Route>
                 <Route path="booking" element={<Booking />} />
                 <Route path="Contact" element={<Contact />} />
-                <Route path="gallery" element={<Gallery />} />
                 <Route path="*" element={<PageNotFound />} />
               </Route>
             </Routes>
@@ -71,10 +76,10 @@ function App() {
               fontSize: "16px",
               maxWidth: "500px",
               padding: "16px 24px",
-              backgroundColor: "var(--color-grey-0)",
-              color: "var(--color-grey-700)",
+              backgroundColor: "white",
+              color: "black",
               opacity: "100",
-              border: "1px solid var(--color-grey-200)",
+              border: "1px solid black",
             },
           }}
         />

@@ -1,7 +1,15 @@
+/* eslint-disable no-unused-vars */
+import { useData } from "../Data/useData";
 import MenuItem from "../MenuItem";
 import { easeInOut, motion } from "framer-motion";
+import Spinner from "../Spinner";
 
 function ChickenBurger() {
+  const { productData, isLoading } = useData();
+  if (isLoading) return <Spinner />;
+  const ChickenBurger = productData.filter(
+    (BeefBurger) => BeefBurger.category === "burger_chicken",
+  );
   const variants = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
@@ -17,27 +25,18 @@ function ChickenBurger() {
       <h1 className="font-menu sm:text-6xl font-extrabold sm:mb-5 text-6xl ">
         Chicken
       </h1>
-      <div className="">
-        <section className="flex flex-col mx-auto gap-y-16 gap-x-1 items-center ">
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <MenuItem
-              type="chicken"
-              title="Normal Chicken Burger"
-              imagesrc="/meat/chickenburger.jpg"
-              imageSmall="/meat/chickenburger-small.jpg"
-              description="Breaded chicken with our homemade seasoning  flour,Brioche bun, special ranch sauce,pickle,lettuce"
-              style="menuItemChicken"
-            />
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.05 }}>
-            <MenuItem
-              type="chicken"
-              title=" Spicy Chicken Burger"
-              imagesrc="/meat/spicy-chicken-burger.jpg"
-              imageSmall="/meat/spicy-chicken-burger-small.jpg"
-              description="breaded chicken with our homemade seasoning  flour,Brioche bun, special hot spicy sauce,pickle"
-            />
-          </motion.div>
+      <div className=" px-6">
+        <section className="grid sm:grid-cols-1 w-[100%]  mx-auto gap-y-5 gap-x-1 items-center">
+          {ChickenBurger.map((item) => (
+            <motion.div key={item.id}>
+              <MenuItem
+                title={item.name}
+                imagesrc={item.imagesrc}
+                description={item.description}
+                price={item.price}
+              />
+            </motion.div>
+          ))}
         </section>
       </div>
     </motion.div>

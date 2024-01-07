@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import PizzaMenuItem from "../features/PizzaMenuItem";
+import PizzaMenuItem from "../features/Pizza/PizzaMenuItem";
 import useScroll from "../hooks/useScroll";
 
 function PizzaMenu() {
