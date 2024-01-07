@@ -35,7 +35,7 @@
     @apply sm:font-normal  sm:w-[20rem] sm:text-lg text-sm  w-[300px] text-center mt-5 px-3;
   }
   .contactLabel {
-    @apply font-normal font-menuTitle text-base md:text-lg text-right flex items-center  justify-center lg:text-start;
+    @apply font-normal font-menuTitle text-base md:text-lg text-right flex items-center  justify-center lg:text-center;
   }
   .inputBox {
     @apply h-[50px] rounded-sm focus:outline-none focus:ring border-black border-2 focus:ring-yellow-500  focus:border-none focus:scale-[1.01] transition-all ease-in-out drop-shadow-xl;

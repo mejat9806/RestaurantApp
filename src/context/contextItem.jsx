@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useContext } from "react";
 import { createContext } from "react";
 
@@ -40,7 +41,6 @@ function useItems(itemType) {
   if (context === undefined) {
     throw new Error("context is at the Wrong Place");
   }
-  // If itemType is provided, filter PromoData based on the item type
   if (itemType) {
     const filteredData = context.PromoData.filter(
       (item) => item.item === itemType,
