@@ -15,6 +15,7 @@ function BurgerPromo({ data }) {
     >
       <div className="relative ">
         <img
+          loading="lazy"
           src={data.image}
           className={`w-full  ${
             onblur ? "blur scale-100 " : ""
