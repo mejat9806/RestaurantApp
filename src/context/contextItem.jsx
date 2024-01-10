@@ -12,7 +12,7 @@ function ItemProvider({ children }) {
       button: "Burger Menu",
       reversed: false,
       image: "/burger1.jpg",
-      video: "/production_id-4131833 (1080p).mp4",
+      video: "/Production Id-4131833 (1080P)-small.mp4",
     },
     {
       id: 2,
@@ -21,7 +21,7 @@ function ItemProvider({ children }) {
       button: "BBQ Menu",
       reversed: true,
       image: "/meat/BBQ.jpg",
-      video: "/pizza oven.mp4",
+      video: "/Pizza-small.mp4",
     },
   ];
 
