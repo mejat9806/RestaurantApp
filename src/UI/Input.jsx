@@ -55,19 +55,26 @@ function Input({
 }) {
   if (type === "select") {
     return (
-      <select name="time" className={`inputBox w-max text-center mb-3 `}>
+      <select
+        disabled={disabled}
+        name="time"
+        className={`inputBox w-max text-center mb-3 disabled:bg-yellow-400/30`}
+        {...register(inputName, {
+          required: "Required",
+        })}
+      >
         <option value="lunch">Lunch</option>
         <option value="dinner">Dinner</option>
       </select>
     );
   }
-  console.log(minGuestNum);
   return (
     <input
       type={type}
-      min={0}
-      max={20}
+      min={minGuestNum}
+      max={maxGuestNum}
       id={id}
+      disabled={disabled}
       {...register(inputName, {
         required: "Required",
         pattern: pattern,
@@ -77,10 +84,11 @@ function Input({
         },
         max: { value: maxGuestNum, message: "max guest is 20" },
       })}
-      disabled={disabled}
       className={` inputBox ${
         big ? "h-20" : ""
-      }  text-center sm:w-max w-full  ${error ? "bg-red-200 " : ""} `}
+      }  text-center sm:w-max w-full  ${
+        error ? "bg-red-200 " : ""
+      } disabled:bg-yellow-400/30 `}
     />
   );
 }

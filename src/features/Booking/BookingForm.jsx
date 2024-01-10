@@ -1,18 +1,20 @@
+/* eslint-disable no-unused-vars */
 import { useForm } from "react-hook-form";
 import FormRow from "../../UI/FormRow";
 import Input from "../../UI/Input";
 import Button from "../../UI/Button";
 import Text_area from "../../UI/Text_area";
-import { useAddCustomer } from "./useCreateCustomer";
+import { useAddBooking } from "./useCreateCustomer";
 
 function BookingForm() {
   const { register, formState, handleSubmit, reset } = useForm();
-  const { errors, isSubmitting } = formState;
-  const { addcustomer } = useAddCustomer();
-  function onSubmit({ email, firstName, lastName, phone, request }) {
-    console.log(email, firstName, lastName, phone, request);
-    const newData = { email, firstName, lastName, phone };
-    addcustomer(newData);
+  const { errors } = formState;
+  const { addBooking, isAddingBooking } = useAddBooking();
+  console.log(isAddingBooking);
+  function onSubmit({ email, firstName, lastName, phone, note, date, time }) {
+    const newData = { email, firstName, lastName, phone, note, date, time };
+    console.log(newData);
+    addBooking(newData);
   }
   return (
     <form
@@ -31,13 +33,13 @@ function BookingForm() {
             style="info"
           >
             <Input
+              disabled={isAddingBooking}
               type="text"
               id="firstName"
               inputName="firstName"
               placeholder="your First Name"
               error={errors?.firstName?.message}
               register={register}
-              disabled={isSubmitting}
             />
           </FormRow>
           <FormRow
@@ -53,7 +55,7 @@ function BookingForm() {
               inputName="lastName"
               placeholder="Your Last Name"
               register={register}
-              disabled={isSubmitting}
+              disabled={isAddingBooking}
             />
           </FormRow>
         </div>
@@ -72,7 +74,7 @@ function BookingForm() {
               inputName="email"
               placeholder=" Your Email"
               register={register}
-              disabled={isSubmitting}
+              disabled={isAddingBooking}
               pattern={{
                 value: /\S+@\S+\.\S+/,
                 message: "invalid email address",
@@ -90,11 +92,11 @@ function BookingForm() {
               id="phone"
               inputName="phone"
               error={errors?.phone?.message}
-              disabled={isSubmitting}
+              disabled={isAddingBooking}
               register={register}
               placeholder="Enter phone number"
               pattern={{
-                value: /^(\+?6?01|0[1-9])-?[0-9]{7}$|^(\+?6?01)[1]-?[0-9]{8}$/,
+                value: /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/,
                 message: "Invalid Phone number",
               }}
             />
@@ -120,12 +122,12 @@ function BookingForm() {
                   error={errors?.date?.message}
                   inputName="date"
                   register={register}
-                  disabled={isSubmitting}
+                  disabled={isAddingBooking}
                 />
               </FormRow>
             </div>
 
-            <div className="justify-center">
+            <div className="">
               <FormRow
                 label="Time"
                 error={errors?.time?.message}
@@ -136,7 +138,7 @@ function BookingForm() {
                   id="time"
                   inputName="time"
                   error={errors?.time?.message}
-                  disabled={isSubmitting}
+                  disabled={isAddingBooking}
                   register={register}
                   pattern={{
                     value:
@@ -158,8 +160,9 @@ function BookingForm() {
                   id="guestNo"
                   inputName="guestNo"
                   error={errors?.guestNo?.message}
-                  disabled={isSubmitting}
+                  disabled={isAddingBooking}
                   register={register}
+                  pattern="[0-9]*"
                   minGuestNum={1}
                   maxGuestNum={20}
                   placeholder="Enter number of people"
@@ -173,9 +176,9 @@ function BookingForm() {
       <FormRow label="Notes" error={errors?.request?.message} type="booking">
         <Text_area
           id="notes"
-          inputName="request"
+          inputName="note"
           register={register}
-          disabled={isSubmitting}
+          disabled={isAddingBooking}
           error={errors?.question?.message}
           placeholder="Place your question here"
         />
@@ -185,11 +188,11 @@ function BookingForm() {
           type="reset"
           design="buttonReset"
           onclick={reset}
-          disable={isSubmitting}
+          disable={isAddingBooking}
         >
           Cancel
         </Button>
-        <Button design="buttonConfirm" disabled={isSubmitting}>
+        <Button design="buttonConfirm" disabled={isAddingBooking}>
           Submit
         </Button>
       </div>

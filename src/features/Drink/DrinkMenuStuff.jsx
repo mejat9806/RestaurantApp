@@ -10,6 +10,7 @@ function DrinkMenuStuff() {
   const { productData, isLoading, error } = useData();
   if (isLoading) return <Spinner />;
   const Drinks = productData.filter((item) => item.category === "drink");
+  console.log(Drinks);
   if (error) return <NoItemFound />;
   console.log(Drinks);
   return (

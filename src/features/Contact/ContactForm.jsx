@@ -32,8 +32,7 @@ function ContactForm() {
       className="space-y-5 mt-8 text-center mb-3 w-full lg:flex lg:flex-col lg:justify-center lg:items-center"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <div className="lg:grid lg:grid-cols-2 flex flex-col gap-5 lg:border-b-2 lg:border-black/20">
-        {" "}
+      <div className="lg:grid lg:grid-cols-2 flex flex-col gap-5 lg:border-b-2 lg:border-black/20 mb-4">
         <FormRow label="First Name" error={errors?.firstName?.message}>
           <Input
             type="text"
@@ -57,7 +56,7 @@ function ContactForm() {
           />
         </FormRow>
       </div>
-      <div className="lg:grid lg:grid-cols-2 flex flex-col gap-5 lg:border-b-2 lg:border-black/20">
+      <div className="lg:grid lg:grid-cols-2 flex flex-col gap-5 lg:border-b-2 lg:border-black/20 mb-4">
         <FormRow label="Email" error={errors?.email?.message}>
           <Input
             type="email"

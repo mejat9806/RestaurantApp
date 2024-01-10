@@ -41,7 +41,7 @@ function FormRow({ label, error, children, type, style }) {
         {children}
         {error && (
           <span
-            className={`md:text-sm text-sm col-span-2 md:col-span-1 text-red-500 font-extrabold capitalize absolute right-0 -bottom-5 md:static md:flex md:flex-col justify-center`}
+            className={`md:text-sm text-sm col-span-2 md:col-span-1 text-red-500 font-extrabold capitalize absolute right-0 -bottom-5 md:static md:flex md:flex-col justify-center w-max`}
           >
             {error}
           </span>

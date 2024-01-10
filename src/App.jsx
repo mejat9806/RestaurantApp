@@ -11,7 +11,7 @@ import BurgerMenu from "./pages/BurgerMenu.jsx";
 import BBQMenu from "./pages/BBQMenu.jsx";
 import SpecialMenu from "./pages/SpecialMenu.jsx";
 import PizzaMenu from "./pages/PizzaMenu.jsx";
-import DrinkMenu from "./pages/PizzaMenu.jsx";
+import DrinkMenu from "./pages/DrinkMenu.jsx";
 import Side from "./pages/Side.jsx";
 
 const Home = lazy(() => import("./pages/Home"));

@@ -13,6 +13,7 @@ function PizzaMenuItem() {
     visible: { opacity: 1, y: 0 },
   };
   if (error) return <NoItemFound />;
+  console.log(PizzaData);
   return (
     <motion.div
       initial="hidden"
