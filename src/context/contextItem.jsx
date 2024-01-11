@@ -11,7 +11,7 @@ function ItemProvider({ children }) {
       desc: "fresh burger with Homemade Sauce",
       button: "Burger Menu",
       reversed: false,
-      image: "/public/meat/burger1.webp",
+      image: "/meat/burger1.webp",
       video: "/Production Id-4131833 (1080P)-small.mp4",
     },
     {
@@ -20,7 +20,7 @@ function ItemProvider({ children }) {
       desc: "Embrace BBQ's Smoky Serenade.",
       button: "BBQ Menu",
       reversed: true,
-      image: "/public/meat/BBQ.webp",
+      image: "/meat/BBQ.webp",
       video: "/Pizza-small.mp4",
     },
   ];
