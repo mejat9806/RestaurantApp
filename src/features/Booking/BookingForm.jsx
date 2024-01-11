@@ -5,13 +5,27 @@ import Input from "../../UI/Input";
 import Button from "../../UI/Button";
 import Text_area from "../../UI/Text_area";
 import { useAddBooking } from "./useCreateCustomer";
+import { isBefore } from "date-fns";
+import toast from "react-hot-toast";
+import { useState } from "react";
 
 function BookingForm() {
   const { register, formState, handleSubmit, reset } = useForm();
+  const [dateError, setDateError] = useState(false);
   const { errors } = formState;
+  function handleReset() {
+    reset;
+    setDateError(false);
+  }
   const { addBooking, isAddingBooking } = useAddBooking();
-  console.log(isAddingBooking);
   function onSubmit({ email, firstName, lastName, phone, note, date, time }) {
+    const today = new Date();
+
+    if (isBefore(new Date(date), today)) {
+      toast.error("You can't start a booking before today");
+      setDateError(true);
+      return;
+    }
     const newData = { email, firstName, lastName, phone, note, date, time };
     console.log(newData);
     addBooking(newData);
@@ -123,6 +137,7 @@ function BookingForm() {
                   inputName="date"
                   register={register}
                   disabled={isAddingBooking}
+                  dateError={dateError}
                 />
               </FormRow>
             </div>
@@ -176,7 +191,7 @@ function BookingForm() {
       <FormRow label="Notes" error={errors?.request?.message} type="booking">
         <Text_area
           id="notes"
-          inputName="note"
+          inputName="request"
           register={register}
           disabled={isAddingBooking}
           error={errors?.question?.message}
@@ -187,7 +202,7 @@ function BookingForm() {
         <Button
           type="reset"
           design="buttonReset"
-          onclick={reset}
+          onclick={handleReset}
           disable={isAddingBooking}
         >
           Cancel

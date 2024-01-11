@@ -52,6 +52,7 @@ function Input({
   error,
   minGuestNum,
   maxGuestNum,
+  dateError,
 }) {
   if (type === "select") {
     return (
@@ -86,8 +87,8 @@ function Input({
       })}
       className={` inputBox ${
         big ? "h-20" : ""
-      }  text-center sm:w-max w-full  ${
-        error ? "bg-red-200 " : ""
+      }  text-center sm:w-max w-full  ${error ? "bg-red-200 " : ""} ${
+        dateError ? "bg-red-200" : ""
       } disabled:bg-yellow-400/30 `}
     />
   );

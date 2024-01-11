@@ -20,7 +20,6 @@ function Home() {
 
   const { observeElement, disconnectObserver, visibilityStates } =
     useObserver();
-
   useEffect(() => {
     observeElement(specialRef.current);
     observeElement(menuRef.current);

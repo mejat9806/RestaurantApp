@@ -15,6 +15,7 @@ function BBQPromo({ data }) {
       <PromoPizzaSVG dataPizza={data} />
       <div className="relative ">
         <img
+          style={{ backgroundColor: "black" }}
           loading="lazy"
           src={data.image}
           className={`w-full  ${
