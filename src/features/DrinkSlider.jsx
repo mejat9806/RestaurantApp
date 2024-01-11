@@ -8,11 +8,11 @@ function DrinkSlider() {
   const slides = useMemo(
     //useMemo will return the value of a function and avoid rerendering it unless the dependency is changed
     () => [
-      { img: "/drink/drink (1).jpg" },
-      { img: "/drink/drink (2).jpg" },
-      { img: "/drink/drink (3).jpg" },
-      { img: "/drink/drink (4).jpg" },
-      { img: "/drink/drink (5).jpg" },
+      { img: "/public/drink/drink (1).webp" },
+      { img: "/public/drink/drink (2).webp" },
+      { img: "/public/drink/drink (3).webp" },
+      { img: "/public/drink/drink (4).webp" },
+      { img: "/public/drink/drink (5).webp" },
     ],
     [],
   );
