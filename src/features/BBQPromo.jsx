@@ -16,7 +16,6 @@ function BBQPromo({ data }) {
       <div className="relative ">
         <img
           style={{ backgroundColor: "black" }}
-          loading="lazy"
           src={data.image}
           className={`w-full  ${
             onblur ? "blur scale-100 " : ""
