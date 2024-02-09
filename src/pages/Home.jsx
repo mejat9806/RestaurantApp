@@ -68,7 +68,7 @@ function Home() {
         <MenuHome />
       </div>
       <div className="flex justify-center bg-black items-center align-middle pb-2 ">
-        <LogoForSection> TRY OUR DRINK</LogoForSection>
+        <LogoForSection> TRY OUR DRINKddede</LogoForSection>
       </div>
       <div
         className={`${
