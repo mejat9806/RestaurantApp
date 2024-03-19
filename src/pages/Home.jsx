@@ -35,7 +35,7 @@ function Home() {
   const DrinkVisible = visibilityStates.get(drinkRef.current) || false;
 
   return (
-    <div className="max-w-[110%] w-full  mx-auto my-0 flex flex-col  relative mb-[50%] sm:mb-0">
+    <div className=" w-full h-full mx-auto my-0 flex flex-col  relative mb-[50%] sm:mb-0">
       <div className="">
         <BurgerPromo data={burgerData[0]} />
         <PizzaPromo data={BBQData[0]} />
@@ -67,18 +67,20 @@ function Home() {
       >
         <MenuHome />
       </div>
-      <div className="flex justify-center bg-black items-center align-middle pb-2 ">
-        <LogoForSection> TRY OUR DRINK</LogoForSection>
-      </div>
-      <div
-        className={`${
-          DrinkVisible
-            ? "opacity-100   translate-y-0 transition-all duration-300 delay-100 z-10"
-            : "translate-y-[10%] opacity-0 transition-all duration-300 delay-100 -z-50"
-        } `}
-        ref={drinkRef}
-      >
-        <DrinkSlider />
+      <div className="h-[800px]">
+        <div className="flex justify-center bg-black items-center align-middle pb-2 ">
+          <LogoForSection> TRY OUR DRINK</LogoForSection>
+        </div>
+        <div
+          className={`${
+            DrinkVisible
+              ? "opacity-100   translate-y-0 transition-all duration-300 delay-100 z-10"
+              : "translate-y-[10%] opacity-0 transition-all duration-300 delay-100 -z-50"
+          } `}
+          ref={drinkRef}
+        >
+          <DrinkSlider />
+        </div>
       </div>
     </div>
   );

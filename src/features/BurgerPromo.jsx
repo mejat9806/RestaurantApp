@@ -8,7 +8,7 @@ function BurgerPromo({ data }) {
   const navigate = useNavigate();
   return (
     <div
-      className={`sm:grid sm:grid-cols-2 flex flex-col bg-black overflow-hidden 
+      className={`sm:grid sm:grid-cols-2 flex flex-col bg-black overflow-hidden  h-[50%]
   `}
       onMouseEnter={() => setOnBlur(true)}
       onMouseLeave={() => setOnBlur(false)}

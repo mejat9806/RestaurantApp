@@ -5,7 +5,7 @@ import Navbar from "../UI/Navbar";
 function Applayout() {
   const navigate = useNavigate();
   return (
-    <div className="flex flex-col min-h-screen ">
+    <div className="flex flex-col  justify-between">
       <Navbar />
       <main className="">
         <Outlet />

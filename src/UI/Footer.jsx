@@ -48,7 +48,7 @@ function Footer() {
 
   return (
     <div
-      className={`w-full h-14 bg-black bottom-0 z-50 flex items-center justify-between  fixed ${
+      className={`w-full h-14 bg-black bottom-0 z-50 flex items-center justify-between mt-10  fixed ${
         isVisible ? "block" : "hidden"
       }`}
     >

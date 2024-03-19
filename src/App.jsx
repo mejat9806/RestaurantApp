@@ -7,22 +7,21 @@ import { Suspense, lazy } from "react";
 
 import Applayout from "./features/Applayout.jsx";
 import Spinner from "./features/Spinner.jsx";
-import BurgerMenu from "./pages/BurgerMenu.jsx";
+/* import BurgerMenu from "./pages/BurgerMenu.jsx";
 import BBQMenu from "./pages/BBQMenu.jsx";
 import SpecialMenu from "./pages/SpecialMenu.jsx";
 import PizzaMenu from "./pages/PizzaMenu.jsx";
 import DrinkMenu from "./pages/DrinkMenu.jsx";
-import Side from "./pages/Side.jsx";
+import Side from "./pages/Side.jsx"; */
 
 const Home = lazy(() => import("./pages/Home"));
 const MenuLayout = lazy(() => import("./features/MenuLayout"));
-/* const About = lazy(() => import("./pages/About"));
-/* const SpecialMenu = lazy(() => import("./pages/SpecialMenu.jsx"));
+const SpecialMenu = lazy(() => import("./pages/SpecialMenu.jsx"));
 const Side = lazy(() => import("./pages/Side.jsx"));
-const DrinkMenu = lazy(() => import("./pages/DrinkMenu.jsx")); */
-/* const BurgerMenu = lazy(() => import("./pages/BurgerMenu"));
+const DrinkMenu = lazy(() => import("./pages/DrinkMenu.jsx"));
+const BurgerMenu = lazy(() => import("./pages/BurgerMenu"));
 const PizzaMenu = lazy(() => import("./pages/PizzaMenu"));
-const BBQMenu = lazy(() => import("./pages/BBQMenu")); */
+const BBQMenu = lazy(() => import("./pages/BBQMenu"));
 const Booking = lazy(() => import("./pages/Booking"));
 const Contact = lazy(() => import("./pages/Contact"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
