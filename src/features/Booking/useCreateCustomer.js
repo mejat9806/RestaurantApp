@@ -11,5 +11,5 @@ export function useAddBooking() {
       queryClient.invalidateQueries({ query: ["customer"] });
     },
   });
-  return {  isAddingBooking };
+  return { isAddingBooking, addBooking };
 }
